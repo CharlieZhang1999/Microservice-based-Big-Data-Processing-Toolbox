@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Big Data Processing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Big Data Processing</h1>
+        <div id="intro">Welcome to Big Data Processing Application</div>
+        <div id="intro">Please select the application you would like to run</div>
+        <form method="post" action="/" id="choices-form">
+            <div id="choices">
+                {% for choice in choices %}
+                <button class="choice" name="choice_id" value="{{ choice.id }}">{{ choice.name }}</button>
+                {% endfor %}
+            </div>
+        </form>
+        {% if selected %}
+        <div id="selected-choice">
+            <!-- Display information related to the selected choice here -->
+            Selected choice: {{ selected.name }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
