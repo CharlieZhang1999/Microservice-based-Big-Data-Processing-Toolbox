@@ -1,6 +1,10 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/gmvPxYB2)
 
 
+Yaokang Wu - yaokangw@andrew.cmu.edu
+
+Qiuyang Zhang - qiuyangz@andrew.cmu.edu
+
 # Web Application
 
 ## Run app locally
@@ -17,6 +21,8 @@ python app.py
 ```
 
 [Web App image](https://hub.docker.com/r/yaokangw/data-app)
+
+![Web App Screenshot](imgs/webapp.jpg)
 
 ## Run app on Docker
 
