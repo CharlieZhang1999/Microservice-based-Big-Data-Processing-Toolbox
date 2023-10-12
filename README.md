@@ -69,3 +69,33 @@ docker run --name jupyter -d -p 8888:8888 yaokangw/jupyter-notebook
 ```
 
 ![Jupyter Notebook Screenshot](imgs/jupyternotebook.jpg)
+
+
+## Spark
+
+[Spark base image](https://hub.docker.com/layers/apache/spark/latest/images/sha256-a4a48089219912a8a87d7928541d576df00fc8d95f18a1509624e32b0e5c97d7?context=explore)
+
+
+[Spark custom image](https://hub.docker.com/layers/qiuyangz/spark/latest/images/sha256-3809b9a329db6b13278661155941c7aad31e7d94abd39692d9cd1f562ded3043?context=repo)
+
+
+![Spark Screenshot](imgs/spark.jpg)
+
+
+## Hadoop
+
+[Hadoop base image](https://hub.docker.com/layers/apache/hadoop/3/images/sha256-af361b20bec0dfb13f03279328572ba764926e918c4fe716e197b8be2b08e37f?context=explore)
+
+[Hadoop custom image](https://hub.docker.com/layers/qiuyangz/myhadoop/latest/images/sha256-af361b20bec0dfb13f03279328572ba764926e918c4fe716e197b8be2b08e37f?context=repo)
+
+
+![Hadoop Screenshot](imgs/hadoop.jpg)
+
+## Jenkins
+
+[Jenkins base image](https://hub.docker.com/layers/jenkins/jenkins/2.414.2-jdk17/images/sha256-8f8122dca2bce1df41da1cbeb8976f2603af6b76928f3bfcc6446e6a6eb126d4?context=explore)
+
+[Jenkins custom image](https://hub.docker.com/layers/qiuyangz/myjenkins/latest/images/sha256-47cb6d1b01bf90535e1f7e9ff377ec07db4792328ca238425ecf181a740289a9?context=repo)
+
+![Jenkins Screenshot](imgs/jenkins.jpg)
+
