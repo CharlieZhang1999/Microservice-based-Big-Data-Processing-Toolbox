@@ -48,3 +48,14 @@ docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000
 docker run  --rm --network=host -e SONAR_HOST_URL="http://127.0.0.1:9000" -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=dummy" -e SONAR_TOKEN="squ_3d972dd73f4e3a7abf386ae9eda5c70ee05b683a" -v "https://github.com/Hallimede/dummy-project" sonarsource/sonar-scanner-cli
 ```
 
+## Jupyter
+
+[Jupyter base image](https://hub.docker.com/r/jupyter/base-notebook)
+
+[Jupyter custom image](https://hub.docker.com/repository/docker/yaokangw/jupyter-notebook/general)
+
+[Jupyter documentation](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)
+
+```
+docker run --name jupyter -d -p 8888:8888 yaokangw/jupyter-notebook
+```
