@@ -99,3 +99,9 @@ docker run --name jupyter -d -p 8888:8888 yaokangw/jupyter-notebook
 
 ![Jenkins Screenshot](imgs/jenkins.jpg)
 
+```
+docker buildx build --platform linux/amd64 -t yaokangw/jenkins:sonar --push .
+docker run -d -p 8080:8080 -p 50000:50000 yaokangw/jenkins:sonar /usr/local/bin/jenkins.sh
+```
+
+[Disable Access Control](https://www.jenkins.io/doc/book/security/access-control/disable/)
