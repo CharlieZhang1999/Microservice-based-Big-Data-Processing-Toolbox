@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service              # 1
+metadata:
+  name: jenkins
+spec:
+  type: LoadBalancer       # 2
+  loadBalancerIP: 35.184.215.158  # Change to reserved IP
+  ports:
+  - port: 8080             # 3
+    protocol: TCP          # 4
+    targetPort: 8080       # 5
+  selector:                # 6
+    app: jenkins           # 7

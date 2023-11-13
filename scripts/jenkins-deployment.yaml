@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment                                          # 1
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  selector:
+    matchLabels:
+      app: jenkins
+  replicas: 2                                             # 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   # 3
+    rollingUpdate: 
+      maxUnavailable: 1                                   # 4
+      maxSurge: 1                                         # 5
+  template:
+    metadata:
+      labels:
+        app: jenkins                                      # 6
+    spec:
+      containers:
+        - image: yaokangw/jenkins:sonar
+          imagePullPolicy: Always                         # 7
+          name: jenkins
+          ports:
+            - name: httpport
+              containerPort: 8080
+            - name: jnlpport
+              containerPort: 50000
+          command:
+            - "/usr/local/bin/jenkins.sh"

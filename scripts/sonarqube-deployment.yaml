@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment                                          # 1
+metadata:
+  name: sonarqube
+  labels:
+    app: sonarqube
+spec:
+  selector:
+    matchLabels:
+      app: sonarqube
+  replicas: 2                                             # 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   # 3
+    rollingUpdate: 
+      maxUnavailable: 1                                   # 4
+      maxSurge: 1                                         # 5
+  template:
+    metadata:
+      labels:
+        app: sonarqube                                    # 6
+    spec:
+      containers:
+        - image: sonarqube
+          imagePullPolicy: Always                         # 7
+          name: sonarqube
+          env:
+            - name: SONAR_ES_BOOTSTRAP_CHECKS_DISABLE
+              value: true
+          ports:
+            - containerPort: 9000
