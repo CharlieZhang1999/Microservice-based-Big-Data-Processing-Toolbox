@@ -44,6 +44,10 @@ docker run --name data-app -p 5000:5000 -d yaokangw/data-app
 docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
 ```
 
+[Configure sonar plugin in jenkins](https://github.com/jenkinsci/configuration-as-code-plugin/blob/master/demos/sonarqube/README.md)
+
+[Allow anonymous authentication](https://stackoverflow.com/questions/65270209/allow-anonymous-authentication-on-sonarqube-8-6)
+
 ## SonarScanner
 
 [SonarScanner image](https://hub.docker.com/r/sonarsource/sonar-scanner-cli)
@@ -105,3 +109,9 @@ docker run -d -p 8080:8080 -p 50000:50000 yaokangw/jenkins:sonar /usr/local/bin/
 ```
 
 [Disable Access Control](https://www.jenkins.io/doc/book/security/access-control/disable/)
+
+
+// TODO:
+
+3. Jenkins auto sets scanner path
+4. Jenkins auto creates pipeline

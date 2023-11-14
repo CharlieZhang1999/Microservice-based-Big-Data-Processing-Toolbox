@@ -4,7 +4,7 @@ metadata:
   name: sonarqube
 spec:
   type: LoadBalancer       # 2
-  loadBalancerIP: 35.184.215.158  # Change to reserved IP
+  loadBalancerIP: 34.134.30.188  # Change to reserved IP
   ports:
   - port: 9000             # 3
     protocol: TCP          # 4

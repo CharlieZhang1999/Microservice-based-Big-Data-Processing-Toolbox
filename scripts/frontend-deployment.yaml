@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment                                          # 1
 metadata:
-  name: sonarqube
+  name: frontend 
   labels:
-    app: sonarqube
+    app: frontend 
 spec:
   selector:
     matchLabels:
-      app: sonarqube
-  replicas: 2                                             # 2
+      app: frontend 
+  replicas: 1                                             # 2
   minReadySeconds: 15
   strategy:
     type: RollingUpdate                                   # 3
@@ -18,11 +18,11 @@ spec:
   template:
     metadata:
       labels:
-        app: sonarqube                                    # 6
+        app: frontend                                     # 6
     spec:
       containers:
-        - image: yaokangw/sonarqube
+        - image: yaokangw/data-app
           imagePullPolicy: Always                         # 7
-          name: sonarqube
+          name: frontend 
           ports:
-            - containerPort: 9000
+            - containerPort: 5000
