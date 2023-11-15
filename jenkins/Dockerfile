@@ -1,5 +1,16 @@
 FROM jenkins/jenkins:lts
 
+
+
+# Install Jenkins plugins using jenkins-plugin-cli
+RUN jenkins-plugin-cli --plugins "sonar:2.16.1" "github:latest" "configuration-as-code:1714.v09593e830cfa"
+
+ENV CASC_JENKINS_CONFIG=$JENKINS_HOME/jenkins.yaml
+
+# Disable CSRF protection and setup wizard
+ENV JAVA_OPTS "-Dhudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION=true -Djenkins.install.runSetupWizard=false"
+COPY jenkins.yaml $JENKINS_HOME/jenkins.yaml
+
 USER root
 
 # Install required packages
@@ -10,17 +21,16 @@ RUN curl -L -o /tmp/sonarscanner.zip https://binaries.sonarsource.com/Distributi
 RUN unzip /tmp/sonarscanner.zip -d /opt/ && mv /opt/sonar-scanner-5.0.1.3006-linux /opt/sonar-scanner
 RUN rm /tmp/sonarscanner.zip
 
+# Config a SonarQube job
+COPY DummyProject/ $JENKINS_HOME/jobs/DummyProject/
+USER root
+RUN chown -R jenkins:jenkins $JENKINS_HOME
+
 # Switch back to Jenkins user
 USER jenkins
 
-# Install Jenkins plugins using jenkins-plugin-cli
-RUN jenkins-plugin-cli --plugins "sonar:2.16.1" "github:latest" "configuration-as-code:1714.v09593e830cfa"
-
-ENV CASC_JENKINS_CONFIG=/var/jenkins_home/jenkins.yaml
-
-# Disable CSRF protection and setup wizard
-ENV JAVA_OPTS "-Dhudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION=true -Djenkins.install.runSetupWizard=false"
-COPY jenkins.yaml /var/jenkins_home/jenkins.yaml
+ENV SONAR_HOST_IP="192.168.1.68"
+ENV SONAR_HOST_PORT="9000"
 
 # Expose Jenkins ports
 EXPOSE 8080

@@ -74,6 +74,10 @@ docker run --name jupyter -d -p 8888:8888 yaokangw/jupyter-notebook
 
 ![Jupyter Notebook Screenshot](imgs/jupyternotebook.jpg)
 
+[SonarQube with Jenkins Setup using Docker Images](https://funnelgarden.com/sonarqube-jenkins-docker/)
+
+[Setting up Dockerized Jenkins and SonarQube in Linux Environment](https://faun.pub/setting-up-dockerized-jenkins-and-sonarqube-in-linux-environment-155ce52b884a)
+
 
 ## Spark
 

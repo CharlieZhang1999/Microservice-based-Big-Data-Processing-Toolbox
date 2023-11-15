@@ -7,30 +7,24 @@ jenkins:
           password: yaokangqiuyang
   authorizationStrategy: unsecured
 
-credentials:
-  system:
-    domainCredentials:
-      - credentials:
-        - string:
-            scope: GLOBAL
-            id: "token"
-            secret: "sqa_647dd347f410a90eaee1d4768d4356023d1302d1"
-            description: "Sonar token"
+tool:
+  sonarRunnerInstallation:
+    installations:
+      - name: Default
+        home: /opt/sonar-scanner
 
 unclassified:
   sonarglobalconfiguration:                  # mandatory
     buildWrapperEnabled: true
     installations:                           # mandatory
       - name: "TEST"                         # id of the SonarQube configuration - to be used in jobs
-        serverUrl: "http://192.168.1.68:9000"
-        credentialsId: token       # id of the credentials containing sonar auth token (since 2.9 version)
-        #serverAuthenticationToken: "token"   # for retrocompatibility with versions < 2.9
+        serverUrl: "http://${SONAR_HOST_IP}:${SONAR_HOST_PORT}"
+        # credentialsId: token       # id of the credentials containing sonar auth token (since 2.9 version)
         mojoVersion: "mojoVersion"
-        additionalProperties: "-Dsonar.projectKey='Dummy'"
-        additionalAnalysisProperties: "additionalAnalysisProperties"
+        additionalProperties: ""
+        # additionalAnalysisProperties: "additionalAnalysisProperties"
         triggers:
           skipScmCause: true
           skipUpstreamCause: true
           envVar: "envVar"
-
           

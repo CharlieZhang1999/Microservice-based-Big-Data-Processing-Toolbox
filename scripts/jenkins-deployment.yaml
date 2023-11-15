@@ -31,3 +31,8 @@ spec:
               containerPort: 50000
           command:
             - "/usr/local/bin/jenkins.sh"
+          env:
+            - name: SONAR_HOST_IP
+              value: "34.134.30.188"
+            - name: SONAR_HOST_PORT
+              value: "9000"
