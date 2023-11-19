@@ -126,9 +126,19 @@ To be modified
     [Hadoop base image](https://hub.docker.com/layers/apache/hadoop/3/images/sha256-af361b20bec0dfb13f03279328572ba764926e918c4fe716e197b8be2b08e37f?context=explore)
 
     [Hadoop custom image](https://hub.docker.com/layers/qiuyangz/myhadoop/latest/images/sha256-af361b20bec0dfb13f03279328572ba764926e918c4fe716e197b8be2b08e37f?context=repo)
+    
+    - Kubernetes hadoop namenode Deployment file: [scripts/namenode-deployment.yaml](scripts/namenode-deployment.yaml)
 
+    - Kubernetes hadoop datanode1 Deployment file: [scripts/datanode1-deployment.yaml](scripts/datanode1-deployment.yaml)
 
-    ![Hadoop Screenshot](imgs/hadoop.jpg)
+    - Kubernetes hadoop datanode2 Deployment file: [scripts/datanode2-deployment.yaml](scripts/datanode2-deployment.yaml)
+
+    - Kubernetes hadoop resourcemanager Deployment file: [scripts/resourcemanager-deployment.yaml](scripts/resourcemanager-deployment.yaml)
+
+    - Kubernetes hadoop namenode Service file: [scripts/namenode-service.yaml](scripts/namenode-service.yaml)
+
+    - Screenshot: 
+        ![Hadoop Screenshot](imgs/hadoop.jpg)
 
 6. Spark
 
@@ -137,8 +147,14 @@ To be modified
 
     [Spark custom image](https://hub.docker.com/layers/qiuyangz/spark/latest/images/sha256-3809b9a329db6b13278661155941c7aad31e7d94abd39692d9cd1f562ded3043?context=repo)
 
+    - Kubernetes spark master Deployment file: [scripts/spark-deployment.yaml](scripts/spark-deployment.yaml)
 
-    ![Spark Screenshot](imgs/spark.jpg)
+    - Kubernetes spark worker Deployment file: [scripts/spark-worker-deployment.yaml](scripts/spark-worker-deployment.yaml)
+
+    - Kubernetes spark Service file: [scripts/spark-service.yaml](scripts/spark-service.yaml)
+
+    - Screenshot:
+        ![Spark Screenshot](imgs/spark.jpg)
 
 
 
@@ -167,3 +183,15 @@ To be modified
     - SonarQube with Jenkins Setup using Docker Images - FunnelGarden [(Link)](https://funnelgarden.com/sonarqube-jenkins-docker/)
 
 
+- Hadoop
+    - Namenode format issue - StackOverflow [(Link)](https://stackoverflow.com/questions/61694471/hdfs-namenode-format-issue-with-aws-ebs-in-eks-cluster)
+
+    - Multi-attach error for pvc volume - StackOverflow [(Link)](https://stackoverflow.com/questions/70945223/kubernetes-multi-attach-error-for-volume-pvc-volume-is-already-exclusively-att)
+
+    - How to create a storageclass that allows ReadWriteMany -- nfs filestore - StackOverflow [(Link)](https://stackoverflow.com/questions/54796639/how-do-i-create-a-persistent-volume-claim-with-readwritemany-in-gke)
+
+    - Persistent Volume - Kubernetes [(Link)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+
+
+- Spark
+    
