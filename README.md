@@ -122,10 +122,9 @@ The architecture for this application is like the following diagram:
 To be modified
 
 5. Hadoop
+    Since the requirement specifies one master node and two worker nodes for Hadoop, we have one name node and two datanodes, resulting in a total of three deployment files.
 
-    [Hadoop base image](https://hub.docker.com/layers/apache/hadoop/3/images/sha256-af361b20bec0dfb13f03279328572ba764926e918c4fe716e197b8be2b08e37f?context=explore)
-
-    [Hadoop custom image](https://hub.docker.com/layers/qiuyangz/myhadoop/latest/images/sha256-af361b20bec0dfb13f03279328572ba764926e918c4fe716e197b8be2b08e37f?context=repo)
+    - Hadoop Docker hub image: https://hub.docker.com/layers/bde2020/hadoop-namenode/2.0.0-hadoop3.2.1-java8/images/sha256-51ad9293ec52083c5003ef0aaab00c3dd7d6335ddf495cc1257f97a272cab4c0?context=explore
     
     - Kubernetes hadoop namenode Deployment file: [scripts/namenode-deployment.yaml](scripts/namenode-deployment.yaml)
 
@@ -142,10 +141,9 @@ To be modified
 
 6. Spark
 
-    [Spark base image](https://hub.docker.com/layers/apache/spark/latest/images/sha256-a4a48089219912a8a87d7928541d576df00fc8d95f18a1509624e32b0e5c97d7?context=explore)
+    There is no specified requirement regarding the number of workers for Spark, so we assume that one master node and one worker node will be sufficient. Here is a list of deployment files and service files used for the spark master and spark worker.
 
-
-    [Spark custom image](https://hub.docker.com/layers/qiuyangz/spark/latest/images/sha256-3809b9a329db6b13278661155941c7aad31e7d94abd39692d9cd1f562ded3043?context=repo)
+    - Spark Docker hub image: https://hub.docker.com/layers/bitnami/spark/3.5/images/sha256-94e06ae46bc7fab045b628f10311004865d753837f66a92009ccfd1040628209?context=explore 
 
     - Kubernetes spark master Deployment file: [scripts/spark-deployment.yaml](scripts/spark-deployment.yaml)
 
@@ -194,4 +192,6 @@ To be modified
 
 
 - Spark
-    
+    - Spark Standalone cluster Documentation - Spark[(Link)](https://spark.apache.org/docs/latest/spark-standalone.html)
+    - Deploy Spark Cluster with Kubernetes - Medium [(Link)](https://medium.com/rahasak/spark-cluster-deployment-with-kubernetes-1848d061cfc9)
+    - Example to set up Spark environment variables - Medium [(Link)](https://medium.com/@SaphE/testing-apache-spark-locally-docker-compose-and-kubernetes-deployment-94d35a54f222)
