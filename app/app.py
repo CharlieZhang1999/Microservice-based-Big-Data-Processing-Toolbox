@@ -38,6 +38,10 @@ def index():
 def select():
     choice_id = int(request.form.get('choice_id'))
     selected = my_app.get_choice_by_id(choice_id)
+    if selected.name == "Apache Hadoop":
+        return redirect('http://34.85.184.16:9870')
+    elif selected.name == "Apache Spark":
+        return redirect('http://34.86.74.223:8080')
     my_app.select(selected)
     return render_template('index.html', choices=my_app.choices, selected=selected)
 

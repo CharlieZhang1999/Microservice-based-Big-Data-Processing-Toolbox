@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment # 1
 metadata:
-  name: frontend
+  name: hadoop
   labels:
-    app: frontend
+    app: hadoop
 spec:
   selector:
     matchLabels:
-      app: frontend
-  replicas: 1 # 2
+      app: hadoop
+  replicas: 2 # 2
   minReadySeconds: 15
   strategy:
     type: RollingUpdate # 3
@@ -18,11 +18,11 @@ spec:
   template:
     metadata:
       labels:
-        app: frontend # 6
+        app: hadoop # 6
     spec:
       containers:
-        - image: qiuyangz/flaskfrontend
+        - image: qiuyangz/myhadoop
           imagePullPolicy: Always # 7
-          name: frontend
+          name: hadoop
           ports:
-            - containerPort: 5000
+            - containerPort: 80
