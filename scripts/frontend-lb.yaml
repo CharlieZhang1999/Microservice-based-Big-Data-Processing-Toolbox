@@ -4,6 +4,7 @@ metadata:
   name: frontend
 spec:
   type: LoadBalancer       # 2
+  loadBalancerIP: 34.123.18.158  # Change to reserved IP
   ports:
   - port: 5000             # 3
     protocol: TCP          # 4

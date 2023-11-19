@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service              # 1
+metadata:
+  name: jupyter
+spec:
+  type: LoadBalancer       # 2
+  loadBalancerIP: 34.136.154.200  # Change to reserved IP
+  ports:
+  - port: 8888             # 3
+    protocol: TCP          # 4
+    targetPort: 8888       # 5
+  selector:                # 6
+    app: jupyter           # 7

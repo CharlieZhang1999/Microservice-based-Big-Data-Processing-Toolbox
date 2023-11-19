@@ -14,7 +14,10 @@
         <form method="post" action="/" id="choices-form">
             <div id="choices">
                 {% for choice in choices %}
-                <button class="choice" name="choice_id" value="{{ choice.id }}">{{ choice.name }}</button>
+                <button class="choice" name="choice_id" value="{{ choice.id }}"
+                    onclick="openNewTab('{{ choice.ip}}', '{{ choice.port}}')">{{
+                    choice.name
+                    }}</button>
                 {% endfor %}
             </div>
         </form>
@@ -24,6 +27,12 @@
             Selected choice: {{ selected.name }}
         </div>
         {% endif %}
+        <script>
+            function openNewTab(ipAddress, port) {
+                // Open a new tab with the specified IP address
+                window.open('http://' + ipAddress + ':' + port, '_blank');
+            }
+        </script>
     </div>
 </body>
 

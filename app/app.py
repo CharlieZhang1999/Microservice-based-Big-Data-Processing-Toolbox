@@ -1,20 +1,23 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 from typing import List
 
 app = Flask(__name__)
 
 class Choice:
-    def __init__(self, id:int, name: str):
+    def __init__(self, id:int, name: str, ip: str, port: int):
         self.id = id
         self.name = name
+        self.ip = ip
+        self.port = port
 
 class App:
     def __init__(self):
         self.selected = None
-        self.choices: List[Choice] = [Choice(1, "Apache Hadoop"),
-                                      Choice(2, "Apache Spark"),
-                                      Choice(3, "Apache Jupyter Notebook"),
-                                      Choice(4, "SonarQube and SonarScanner")]
+        self.choices: List[Choice] = [Choice(1, "Apache Hadoop", "34.67.231.30", 80),
+                                      Choice(2, "Apache Spark", "34.67.109.128", 80),
+                                      Choice(3, "Jupyter Notebook", "34.136.154.200", 8888),
+                                      Choice(4, "Jenkins", "35.184.215.158", 8080),
+                                      Choice(5, "SonarQube", "34.134.30.188", 9000)]
 
     def select(self, choice: Choice):
         self.selected = choice
