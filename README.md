@@ -119,9 +119,9 @@ The architecture for this application is like the following diagram:
         ![Jenkins Screenshot](imgs/jenkins.jpg)
 
 
-To be modified
 
 5. Hadoop
+
     Since the requirement specifies one master node and two worker nodes for Hadoop, we have one name node and two datanodes, resulting in a total of three deployment files.
 
     - Hadoop Docker hub image: https://hub.docker.com/layers/bde2020/hadoop-namenode/2.0.0-hadoop3.2.1-java8/images/sha256-51ad9293ec52083c5003ef0aaab00c3dd7d6335ddf495cc1257f97a272cab4c0?context=explore
