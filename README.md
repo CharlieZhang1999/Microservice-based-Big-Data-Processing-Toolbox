@@ -192,6 +192,6 @@ To be modified
 
 
 - Spark
-    - Spark Standalone cluster Documentation - Spark[(Link)](https://spark.apache.org/docs/latest/spark-standalone.html)
+    - Spark Standalone cluster Documentation - Spark [(Link)](https://spark.apache.org/docs/latest/spark-standalone.html)
     - Deploy Spark Cluster with Kubernetes - Medium [(Link)](https://medium.com/rahasak/spark-cluster-deployment-with-kubernetes-1848d061cfc9)
     - Example to set up Spark environment variables - Medium [(Link)](https://medium.com/@SaphE/testing-apache-spark-locally-docker-compose-and-kubernetes-deployment-94d35a54f222)

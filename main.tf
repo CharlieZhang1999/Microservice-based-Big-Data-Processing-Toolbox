@@ -68,6 +68,42 @@ resource "null_resource" "deploy_services" {
     }
 
     provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/my-hadoop-env-configmap.yaml"
+    }
+
+    provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/namenode-deployment.yaml"
+    }
+
+    provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/datanode1-deployment.yaml"
+    }
+
+    provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/datanode2-deployment.yaml"
+    }
+
+    provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/resourcemanager-deployment.yaml"
+    }
+
+    provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/namenode-service.yaml"
+    }
+
+    provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/spark-deployment.yaml"
+    }
+
+    provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/spark-worker-deployment.yaml"
+    }
+
+    provisioner "local-exec" {
+        command = "kubectl apply -f ./scripts/spark-service.yaml"
+    }
+
+    provisioner "local-exec" {
         command = "kubectl get services"
     }
 }

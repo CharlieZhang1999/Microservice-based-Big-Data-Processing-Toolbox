@@ -10,7 +10,7 @@ metadata:
   name: spark
 spec:
   type: LoadBalancer
-  loadBalancerIP: 34.86.74.223
+  loadBalancerIP: 34.67.109.128
   ports:
     - name: "8080"
       port: 8080

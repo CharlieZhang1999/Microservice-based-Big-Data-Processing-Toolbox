@@ -8,7 +8,7 @@ metadata:
   name: namenode
 spec:
   type: LoadBalancer
-  loadBalancerIP: 34.85.184.16
+  loadBalancerIP: 34.67.231.30
   ports:
     - name: web-ui
       protocol: TCP

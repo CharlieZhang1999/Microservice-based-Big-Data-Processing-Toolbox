@@ -13,8 +13,8 @@ class Choice:
 class App:
     def __init__(self):
         self.selected = None
-        self.choices: List[Choice] = [Choice(1, "Apache Hadoop", "34.67.231.30", 80),
-                                      Choice(2, "Apache Spark", "34.67.109.128", 80),
+        self.choices: List[Choice] = [Choice(1, "Apache Hadoop", "34.67.231.30", 9870),
+                                      Choice(2, "Apache Spark", "34.67.109.128", 8080),
                                       Choice(3, "Jupyter Notebook", "34.136.154.200", 8888),
                                       Choice(4, "Jenkins", "35.184.215.158", 8080),
                                       Choice(5, "SonarQube", "34.134.30.188", 9000)]
@@ -38,10 +38,6 @@ def index():
 def select():
     choice_id = int(request.form.get('choice_id'))
     selected = my_app.get_choice_by_id(choice_id)
-    if selected.name == "Apache Hadoop":
-        return redirect('http://34.85.184.16:9870')
-    elif selected.name == "Apache Spark":
-        return redirect('http://34.86.74.223:8080')
     my_app.select(selected)
     return render_template('index.html', choices=my_app.choices, selected=selected)
 
