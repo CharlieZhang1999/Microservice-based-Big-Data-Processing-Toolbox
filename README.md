@@ -4,9 +4,23 @@
 
 ## Team
 
-Yaokang Wu - yaokangw@andrew.cmu.edu
+- Yaokang Wu - yaokangw@andrew.cmu.edu
 
-Qiuyang Zhang - qiuyangz@andrew.cmu.edu
+- Qiuyang Zhang - qiuyangz@andrew.cmu.edu
+
+## Video
+
+https://cmu.box.com/s/xpmblmkyetr4lizl3szzgt7aab59kl41
+
+*Timeline*
+- 00:00 - Application demo
+- 01:37 - Frontend code walkthrough
+- 02:35 - Jupyter Notebook code walkthrough
+- 03:05 - SonarQube code walkthrough
+- 03:43 - Jenkins code walkthrough
+- 06:42 - Apache Hadoop code walkthrough
+- 08:24 - Apache Spark code walkthrough
+- 09:55 - Terraform code walkthrough
 
 
 ## Deployment
