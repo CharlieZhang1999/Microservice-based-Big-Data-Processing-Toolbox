@@ -1,15 +1,13 @@
 FROM jenkins/jenkins:lts
 
+# Install Jenkins Configuration as Code using jenkins-plugin-cli
+RUN jenkins-plugin-cli --plugins "configuration-as-code:1714.v09593e830cfa"
 
-
-# Install Jenkins plugins using jenkins-plugin-cli
-RUN jenkins-plugin-cli --plugins "sonar:2.16.1" "github:latest" "configuration-as-code:1714.v09593e830cfa"
-
+COPY jenkins.yaml $JENKINS_HOME/jenkins.yaml
 ENV CASC_JENKINS_CONFIG=$JENKINS_HOME/jenkins.yaml
 
 # Disable CSRF protection and setup wizard
 ENV JAVA_OPTS "-Dhudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION=true -Djenkins.install.runSetupWizard=false"
-COPY jenkins.yaml $JENKINS_HOME/jenkins.yaml
 
 USER root
 
@@ -23,7 +21,6 @@ RUN rm /tmp/sonarscanner.zip
 
 # Config a SonarQube job
 COPY DummyProject/ $JENKINS_HOME/jobs/DummyProject/
-USER root
 RUN chown -R jenkins:jenkins $JENKINS_HOME
 
 # Switch back to Jenkins user

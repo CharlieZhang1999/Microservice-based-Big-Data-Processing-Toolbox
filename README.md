@@ -119,9 +119,8 @@ The architecture for this application is like the following diagram:
         ![Jenkins Screenshot](imgs/jenkins.jpg)
 
 
-To be modified
-
 5. Hadoop
+
     Since the requirement specifies one master node and two worker nodes for Hadoop, we have one name node and two datanodes, resulting in a total of three deployment files.
 
     - Hadoop Docker hub image: https://hub.docker.com/layers/bde2020/hadoop-namenode/2.0.0-hadoop3.2.1-java8/images/sha256-51ad9293ec52083c5003ef0aaab00c3dd7d6335ddf495cc1257f97a272cab4c0?context=explore
@@ -137,6 +136,7 @@ To be modified
     - Kubernetes hadoop namenode Service file: [scripts/namenode-service.yaml](scripts/namenode-service.yaml)
 
     - Screenshot: 
+    
         ![Hadoop Screenshot](imgs/hadoop.jpg)
 
 6. Spark
@@ -152,6 +152,7 @@ To be modified
     - Kubernetes spark Service file: [scripts/spark-service.yaml](scripts/spark-service.yaml)
 
     - Screenshot:
+
         ![Spark Screenshot](imgs/spark.jpg)
 
 
@@ -163,31 +164,22 @@ To be modified
 - Jenkins
 
     - Jenkins Configuration as Code Plugin Documentation [(Link)](https://github.com/jenkinsci/configuration-as-code-plugin/tree/master)
-
     - Configure sonar plugin in jenkins - Github [(Link)](https://github.com/jenkinsci/configuration-as-code-plugin/blob/master/demos/sonarqube/README.md)
-
     - Setting up Dockerized Jenkins and SonarQube in Linux Environment - Medium [(Link)](https://faun.pub/setting-up-dockerized-jenkins-and-sonarqube-in-linux-environment-155ce52b884a)
-
     - Disable Access Control - Jenkins [(Link)](https://www.jenkins.io/doc/book/security/access-control/disable/)
-
     - Option 1 Sample Solution Jenkins Dockerfile - Sankalp, Kishan [(Link)](https://github.com/Cloud-Infrastructure-Fall-2023/option-1-sample-solution/blob/main/jenkins-sonarqube-sonarscanner/Dockerfile)
 
 - Sonarqube
 
     - Installing SonarQube from the Docker image - SonarQube [(Link)](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/)
-
     - Allow anonymous authentication on SonarQube 8.6 - StackOverflow [(Link)](https://stackoverflow.com/questions/65270209/allow-anonymous-authentication-on-sonarqube-8-6)
-
     - SonarQube with Jenkins Setup using Docker Images - FunnelGarden [(Link)](https://funnelgarden.com/sonarqube-jenkins-docker/)
 
 
 - Hadoop
     - Namenode format issue - StackOverflow [(Link)](https://stackoverflow.com/questions/61694471/hdfs-namenode-format-issue-with-aws-ebs-in-eks-cluster)
-
     - Multi-attach error for pvc volume - StackOverflow [(Link)](https://stackoverflow.com/questions/70945223/kubernetes-multi-attach-error-for-volume-pvc-volume-is-already-exclusively-att)
-
     - How to create a storageclass that allows ReadWriteMany -- nfs filestore - StackOverflow [(Link)](https://stackoverflow.com/questions/54796639/how-do-i-create-a-persistent-volume-claim-with-readwritemany-in-gke)
-
     - Persistent Volume - Kubernetes [(Link)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 
 

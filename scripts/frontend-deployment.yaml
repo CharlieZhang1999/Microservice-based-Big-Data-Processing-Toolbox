@@ -21,7 +21,7 @@ spec:
         app: frontend # 6
     spec:
       containers:
-        - image: qiuyangz/flaskfrontend
+        - image: yaokangw/data-app
           imagePullPolicy: Always # 7
           name: frontend
           ports:
