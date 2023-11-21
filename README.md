@@ -118,7 +118,6 @@ The architecture for this application is like the following diagram:
 
         ![Jenkins Screenshot](imgs/jenkins.jpg)
 
-
 5. Hadoop
 
     Since the requirement specifies one master node and two worker nodes for Hadoop, we have one name node and two datanodes, resulting in a total of three deployment files.

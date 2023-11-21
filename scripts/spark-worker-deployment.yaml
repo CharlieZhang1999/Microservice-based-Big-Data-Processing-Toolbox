@@ -29,7 +29,7 @@ spec:
             - name: SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED
               value: "no"
             - name: SPARK_MASTER_HOST
-              value: 34.86.74.223
+              value: 34.67.109.128
             - name: SPARK_MASTER_URL
               value: spark://spark:7077
             - name: SPARK_MODE
